@@ -1,0 +1,156 @@
+/*www.uiimg.com Ulͼ*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.time11 {
+	background-color: #F7EEE4;
+	font-size: 14px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.time11 a {
+	
+	color: #848484;
+	text-decoration: none;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+.time11 a:hover,
+.time11 a.selected {
+		color: #000;
+	text-shadow: #000 1px 1px 2px;
+	}
+
+.time11 h1,h2,h4,h5,h6 {
+	text-align: center;
+	color: #ccc;
+	text-shadow: #000 1px 1px 2px;
+	margin-bottom: 5px;
+}
+	.time11 h1 {
+		font-size: 18px;
+	}
+	.time11 h2 {
+		font-size: 14px;
+	}
+.sociales {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+	#timeline {
+		width: 800px;
+		height: 350px;
+		overflow: hidden;
+		margin: 100px auto;
+		position: relative;
+		background: url('../images/dot.gif') left 45px repeat-x;
+	}
+		#dates {
+			width: 800px;
+			height: 60px;
+			overflow: hidden;
+		}
+			#dates li {
+				list-style: none;
+				float: left;
+				width: 200px;
+				height: 50px;
+				font-size: 20px;
+				text-align: center;
+				background: url('../images/biggerdot.png') center bottom no-repeat;
+			}
+				#dates a {
+					line-height: 38px;
+					padding-bottom: 10px;
+				}
+				#dates .selected {
+			        font-size: 30px;
+				}
+		
+		#issues {
+			width: 800px;
+			height: 350px;
+			overflow: hidden;
+		}	
+			#issues li {
+				width: 800px;
+				height: 350px;
+				list-style: none;
+				float: left;
+			}
+				#issues li img {
+					float: left;
+					border-radius: 20%;
+					margin: 10px 30px 10px 50px;
+				}
+				#issues li h1 {
+					color: #000;
+					font-size: 40px;
+					margin-top: 40px;
+					margin-bottom: 20px;
+					text-shadow: #000 1px 1px 2px;
+				}
+				#issues li p {
+					font-size: 14px;
+					margin-right: 70px;
+					font-weight: normal;
+					line-height: 22px;
+				}
+		
+		#grad_left,
+		#grad_right {
+			width: 100px;
+			height: 350px;
+			position: absolute;
+			top: 0;
+		}
+			#grad_left {
+		        left: 0;
+		        
+			}
+			#grad_right {
+		        right: 0;
+		        
+			}
+		
+		#next,
+		#prev {
+			position: absolute;
+			top: 0;
+			font-size: 70px;
+			top: 170px;
+			width: 22px;
+			height: 38px;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
+			overflow: hidden;
+		}
+			#next:hover,
+			#prev:hover {
+				background-position: 0 -76px;
+			}
+			#next {
+				right: 0;
+				background-image: url('../images/next.png');
+			}
+			#prev {
+				left: 0;
+				background-image: url('../images/prev.png');
+			}
+				#next.disabled,
+				#prev.disabled {
+					opacity: 0.2;
+				}
+
+
+

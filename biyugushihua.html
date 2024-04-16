@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>寻梦敦煌</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- All CSS is here
+	============================================ -->
+    <link rel="stylesheet" href="assets/css/vendor/proximanova.css" />
+    <link rel="stylesheet" href="assets/css/vendor/line-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
+    <link rel="stylesheet" href="assets/css/plugins/aos.css" />
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slinky.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        body{
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255, 255, 255, 0.8)), url('assets/images/bg/14.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .image-container {
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .image {
+            width: 2500px; /* 图片的实际宽度 */
+        }
+        .wenzi{
+            width: 60%;
+            margin:50px auto;
+            text-align: center;
+        }
+        .gallery-details-btn {
+            display: inline-block;
+            margin: 0 15px; /* 添加适当的间距 */
+        }
+        .container_biyu {
+            display: flex;
+            align-items: center;
+            margin: 0 100px;
+        }
+
+        .image_biyu {
+            flex: 1;
+            max-width: 30%; /* 调整图片占据的宽度 */
+        }
+
+        .text_biyu {
+            flex: 1;
+            padding: 50px; /* 调整文字区域的内边距 */
+        }
+
+        .image_biyu>img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+
+
+
+<body class="body-dark-mode-wrap">
+    <div class="main-wrapper">
+        <header class="header-area header-area-padding-2 section-padding-lr-1 transparent-bar sticky-bar bg-white sticky-white-bg">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="logo logo-center-small">
+                            <a class="default-logo" href="index.html"><img src="assets/images/logo/black.png" alt="logo" style="width:60%"></a>
+                            <a class="white-logo" href="index.html"><img src="assets/images/logo/white.png" alt="logo" style="width:60%"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="main-menu main-menu-black text-center">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">首页</a></li>
+                                    <li class="active"><a href="discover.html">探索</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="color.html">色彩</a></li>
+                                            <li><a href="theme.html">题材</a></li>
+                                            <li><a href="map.html">知识图谱</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="subject.html">专题</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="subject1.html">云锦天章</a></li>
+                                            <li><a href="subject2.html">霓裳羽衣</a></li>
+                                            <li><a href="instrument.html">余音绕梁</a></li>
+                                            <li><a href="subject4.html">珍奇异兽</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="news.html">资讯</a></li>
+                                    <li><a href="contact.html">讨论</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="header-action">
+                            <div class="search-wrap">
+                                <a class="search-active" href="#">
+                                    <img class="injectable" src="assets/images/icon-img/search.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="light-dark-mode-wrap">
+                                <span class="dark-mode">Dark mode</span>
+                                <span class="light-mode">Light mode</span>
+                                <div class="light-dark-btn">
+
+                                </div>
+                            </div>
+                            <div class="offcanvas-wrap">
+                                <a class="header-aside-button" href="#">
+                                    <span class="offcanvas-width-1"></span>
+                                    <span class="offcanvas-width-2"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- aside start -->
+        <div class="header-aside-active">
+            <div class="header-aside-wrap">
+                <a class="aside-close"><img class="injectable" src="assets/images/icon-img/aside-close.svg" alt=""></a>
+                <div class="header-aside-content-wrap">
+                    <div id="menu" class="slinky-mobile-menu text-left">
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="discover.html">探索</a>
+                                <ul class="sub-menu">
+                                    <li><a href="color.html">色彩</a></li>
+                                    <li><a href="theme.html">题材</a></li>
+                                   <li><a href="map.html">知识图谱</a></li>
+                                </ul>
+							</li>
+                            <li><a href="subject.html">专题</a>
+                                <ul class="sub-menu">
+                                    <li><a href="subject1.html">云锦天章</a></li>
+                                    <li><a href="subject2.html">霓裳羽衣</a></li>
+                                    <li><a href="instrument.html">余音绕梁</a></li>
+                                    <li><a href="subject4.html">珍奇异兽</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="news.html">资讯</a></li>
+                            <li><a href="contact.html">讨论</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-aside-content">
+                        <img src="assets/images/img1/s4.png" alt="">
+                        <p>敦煌文化，以莫高窟佛教艺术和藏经洞文物为代表，延续近2000年，是中国文化与印度文化、希腊文化、波斯文化等外来文化交融荟萃的结晶，是世界文明长河中的璀璨明珠。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- search start -->
+        <div class="search-popup-wrap main-search-active">
+            <div class="close-style-position">
+                <a class="search-close"><img class="injectable" src="assets/images/icon-img/aside-close.svg" alt=""></a>
+            </div>
+            <div class="search-popup-content">
+                <form class="search-popup-form" action="#">
+                    <input type="text" placeholder="Search for… ">
+                    <button class="button-search"><img class="injectable" src="assets/images/icon-img/search.svg" alt=""></button>
+                </form>
+            </div>
+        </div>
+        <div class="breadcrumb-area breadcrumb-padding-2">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h1 data-aos="fade-up" data-aos-delay="200">金毛狮子坚誓本生</h1><br>
+                    <p data-aos="fade-up" data-aos-delay="300" class="zhengwen">莫高窟第85窟是归义军第二任都僧统翟法荣的功德窟，开凿于晚唐，咸通三年 (862) 至咸通八年 (867) 。洞窟中如今依旧能看到五代、元、清等多个朝代重修的历史痕迹，此窟形状为莫高窟里最常见的覆斗顶窟，主室内设有中心佛坛，洞窟内画有多铺经变画，墙壁下部的屏风画多达42幅。<br><br>莫高窟现存的报恩经变最早见于盛唐148窟，历经中、晚唐、五代、宋，直到西夏时期便不再出现。报恩经的兴衰与当时的中国，尤其是河西及敦煌一带社会状况及政治形式紧密相关。故事位于南壁下部左上角，根据《报恩经变·亲近品》进行绘制。</p>
+                </div>
+            </div>
+        </div>
+        <div class="container_biyu">
+            <div class="image_biyu" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/bihua/金毛狮子.jpg" alt="Image">
+            </div>
+            <div class="text_biyu">
+                <h2 data-aos="fade-up" data-aos-delay="300">金毛狮子坚誓</h2>
+                <h4 data-aos="fade-up" data-aos-delay="300">（壁画阅读顺序：自下而上）</h4>
+                <p data-aos="fade-up" data-aos-delay="300">在波罗奈国仙圣山中，有一头名叫坚誓的狮子，他浑身长着金色的毛发，看起来气势雄伟，十分威武，但它从不伤人，并且与佛门僧人十分亲近，经常悉听他们诵经说法。此时山中有一位猎师，见到坚誓的一身金色皮毛，感到十分惊艳，便心生贪念意图剥取坚誓的皮毛，将其献给国王讨其欢心以求高官厚禄获得荣华富贵，但是他一直害怕坚誓的威猛而迟迟没有下手。后来猎师见坚誓与僧人亲近，便心生一计，将自己伪装成僧人的样子想要骗取坚誓的信任，好将它猎杀。<br><br>做好准备后，猎师找到坚誓，并以为它诵经为由将坚誓骗到山林深处，以毒箭将其射杀，坚誓身中毒箭疼痛将死，但仍旧没有伤害猎师，随后猎师等坚誓死去将狮皮剥下献与国王。国王得知事情的原委后，心生忧恼，认为如果自己将爵禄赐给这样的一个人就是和他一样在行大恶事，于是下令将猎师处死，聚香木火化狮皮，收取舍利并起塔供养。<br><br>画面由下而上，从猎师诱骗坚誓开始，先画猎师伪装成沙门模样，髡发缁服，双手合十坐于山林间，坚誓俯卧在前，等待他诵经说法。<br><br>紧接着画面上方猎人起立前行，坚誓跟随其后；山林深处，猎师拉弓毒射坚誓；猎师用刀将坚誓皮毛剥下；左上角王宫中猎师献狮皮，国王斥责他的行为；城外，绘一团熊熊燃烧的火焰，表示火化坚誓皮毛；右上角画国王与众臣跪于舍利塔前供养坚誓。<br><br>这一故事宣扬了祛恶扬善和“忍辱度无极”的思想，同时也表达了对像猎师这样的伪善者的斥责。</p>
+            </div>
+        </div>
+        <div style="height: 100px"></div>
+    </div>
+    <!-- Global Vendor, plugins JS -->
+    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/svg-inject.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/mouse-parallax.js"></script>
+    <script src="assets/js/plugins/slinky.min.js"></script>
+    <script src="assets/js/plugins/swiper.min.js"></script>
+    <script src="assets/js/plugins/ajax-mail.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

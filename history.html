@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>寻梦敦煌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- All CSS is here
+	============================================ -->
+    <link rel="stylesheet" href="assets/css/vendor/proximanova.css" />
+    <link rel="stylesheet" href="assets/css/vendor/line-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
+    <link rel="stylesheet" href="assets/css/plugins/aos.css" />
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slinky.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css1/style.css" />
+	
+	<style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.9);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+			padding-top: 130px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 33px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+
+
+
+<body class="body-dark-mode-wrap">
+    <div class="main-wrapper">
+        <header class="header-area header-area-padding-1 section-padding-lr-1 transparent-bar sticky-bar bg-white sticky-white-bg">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="logo logo-center-small">
+                            <a class="default-logo" href="index.html"><img src="assets/images/img1/title1.png" alt="logo" style="width:60%;"></a>
+                            <a class="white-logo" href="index.html"><img src="assets/images/img1/title2.png" alt="logo" style="width:60%;"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="main-menu text-center">
+                            <nav>
+                                <ul>
+                                    <li class="active"><a href="index.html">首页</a></li>
+                                    <li><a href="discover.html">探索</a>
+										<ul class="sub-menu">
+                                            <li><a href="color.html">色彩</a></li>
+                                            <li><a href="theme.html">题材</a></li>
+										   <li><a href="map.html">知识图谱</a></li>
+                                        </ul>
+									</li>
+                                    <li><a href="subject.html">专题</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="subject1.html">云锦天章</a></li>
+                                            <li><a href="subject2.html">霓裳羽衣</a></li>
+                                            <li><a href="instrument.html">余音绕梁</a></li>
+                                            <li><a href="subject4.html">珍奇异兽</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="news.html">资讯</a>
+                                    </li>
+                                    <li><a href="contact.html">讨论</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="header-action">
+                            <div class="search-wrap">
+                                <a class="search-active" href="#">
+                                    <img class="injectable" src="assets/images/icon-img/search.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="light-dark-mode-wrap">
+                                <span class="dark-mode">Dark mode</span>
+                                <span class="light-mode">Light mode</span>
+                                <div class="light-dark-btn">
+
+                                </div>
+                            </div>
+                            <div class="offcanvas-wrap">
+                                <a class="header-aside-button" href="#">
+                                    <span class="offcanvas-width-1"></span>
+                                    <span class="offcanvas-width-2"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- aside start -->
+        <div class="header-aside-active">
+            <div class="header-aside-wrap">
+                <a class="aside-close"><img class="injectable" src="assets/images/icon-img/aside-close.svg" alt=""></a>
+                <div class="header-aside-content-wrap">
+                    <div id="menu" class="slinky-mobile-menu text-left">
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="discover.html">探索</a>
+                                <ul class="sub-menu">
+                                    <li><a href="color.html">色彩</a></li>
+                                    <li><a href="theme.html">题材</a></li>
+                                   <li><a href="map.html">知识图谱</a></li>
+                                </ul>
+							</li>
+                            <li><a href="subject.html">专题</a>
+                                <ul class="sub-menu">
+                                    <li><a href="subject1.html">云锦天章</a></li>
+                                    <li><a href="subject2.html">霓裳羽衣</a></li>
+                                    <li><a href="instrument.html">余音绕梁</a></li>
+                                    <li><a href="subject4.html">珍奇异兽</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="news.html">资讯</a></li>
+                            <li><a href="contact.html">讨论</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-aside-content">
+                        <img src="assets/images/img1/s4.png" alt="">
+                        <p>敦煌文化，以莫高窟佛教艺术和藏经洞文物为代表，延续近2000年，是中国文化与印度文化、希腊文化、波斯文化等外来文化交融荟萃的结晶，是世界文明长河中的璀璨明珠。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">敦煌石窟历史发展</h2>
+        </div>
+        <div class="timeline">
+            <div class="item" data-text="北凉时期">
+                <div class="content">
+                    <img src="./img/01.jpg" alt="" class="img">
+                    <h2 class="content-title">401-439</h2>
+                    <p class="content-desc">
+                        这一时期的敦煌壁画，受印度雕塑、绘画艺术的影响较大，人物绘画线条朴实古拙，着色用笔雄健壮丽，层层晕染，立体感很强，具有原始的粗犷风格。色彩方面，以褐、绿、青、白、黑为多，一般多在赭红色的底色上绘石青、石绿、黑等颜色。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="北魏时期">
+                <div class="content">
+                    <img src="./img/02.jpg" alt="" class="img">
+                    <h2 class="content-title">439-534</h2>
+                    <p class="content-desc">
+                        北魏是莫高窟的初创时期。这时期的洞窟建窟形制带有明显的西域和中原风格，是中西结合的塔庙式洞窟。在人物画像上，描绘身体的动感以及衣饰、飘带形成的流动感，往往超越了表现的真实性，中国式审美出现雏形。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="西魏时期">
+                <div class="content">
+                    <img src="./img/03.jpg" alt="" class="img">
+                    <h2 class="content-title">535-556</h2>
+                    <p class="content-desc">
+                        这一时期的动物形象丰富，洞窟中大量的山林动物形象，狩猎场景，是当时人们寄情于山水，畅游于田猎的现实生活的真实写照。且进一步接受来自中原的影响，人物形象趋向于清瘦，佛像袈裟表现出飘逸的特征。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="北周时期">
+                <div class="content">
+                    <img src="./img/04.jpg" alt="" class="img">
+                    <h2 class="content-title">557-581</h2>
+                    <p class="content-desc">
+                        这一时期无论构图还是技法都遗存有西域的特征。勾线粗犷，敷彩浓重。衣冠服饰采用线条及色块相结合的表现法。人物面部采用多层次晕染的凹凸法表现明暗。原来面部轮廓及眼眶为朱红色，后经岁月侵蚀，颜色氧化为墨色，又兼白色主体残留，构成粗重黑褐色的圆圈效果，俗称“小字脸”或“五白”脸，形成这一时期人物画独特的风格。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="隋代">
+                <div class="content">
+                    <img src="./img/05.jpg" alt="" class="img">
+                    <h2 class="content-title">581-618</h2>
+                    <p class="content-desc">
+                        隋代彩塑风格多样，但总的趋向是早期洞窟中的各种外来因素在逐渐改变，急速地向着本土化发展。隋代彩塑不仅数量增加，而且在洞窟中的体量也增大，体现出宏大的气势。同时，艺术家对菩萨、弟子以及天王、力士形象的刻画更注重个性化的表现。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="唐代">
+                <div class="content">
+                    <img src="./img/06.jpg" alt="" class="img">
+                    <h2 class="content-title">618-907</h2>
+                    <p class="content-desc">
+                        唐代钝化壁画的人物造型，都有一个十分明显的共性，那就是圆润丰满，极具生命力。唐代壁画的人物无论是面部、手足、胸臀都趋近于丰盈圆融，看上去显得富贵而健康。另外，唐代钝化壁画的人物造型，相较于其他时期的壁画要更加注重人物身形姿态的挺拔与健壮，显现出一种勇武有力精神抖擞的状态，整体看下来外柔内刚、阴阳相济。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="西夏时期">
+                <div class="content">
+                    <img src="./img/07.jpg" alt="" class="img">
+                    <h2 class="content-title">1038-1227</h2>
+                    <p class="content-desc">
+                        西夏壁画数量很多，但很少有新题材，在构图和敷彩方面却有特点。 供养菩萨行列变得高大，且多占据甬道或壁面下部的显著位置。 净土变之类的经变画构图趋于程式化，人物呆板，存在一些很明显的回鹤风格壁画。 
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="元代">
+                <div class="content">
+                    <img src="./img/08.jpg" alt="" class="img">
+                    <h2 class="content-title">1271-1368</h2>
+                    <p class="content-desc">
+                        恢复被中断的“丝绸之路”，绘画又可以看到中原新型风格以及藏族佛教艺术风格。
+                    </p>
+                </div>
+            </div>
+        </div>
+    <div class="footer">
+		<a></a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                // 获取时间轴项目的总数
+                var itemLength = selectors.item.length;
+                // 当页面滚动时，触发滚动事件
+                $(window).scroll(function () {
+                    var max, min;
+                    // 获取页面滚动的距离
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        // 获取当前时间轴项目的最小和最大高度
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                        // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                        // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                        else if (pos <= max - 10 && pos >= min - 200) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        /*
+        最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+        这将启用时间轴插件并为该时间轴绑定滚动事件。
+        */
+       $("#shell").timeline();
+
+
+    </script>
+        <!-- search start -->
+        <div class="search-popup-wrap main-search-active">
+            <div class="close-style-position">
+                <a class="search-close"><img class="injectable" src="assets/images/icon-img/aside-close.svg" alt=""></a>
+            </div>
+            <div class="search-popup-content">
+                <form class="search-popup-form" action="#">
+                    <input type="text" placeholder="Search for… ">
+                    <button class="button-search"><img class="injectable" src="assets/images/icon-img/search.svg" alt=""></button>
+                </form>
+            </div>
+        </div>
+        
+        
+      </div>  
+    </div>
+    <!-- Global Vendor, plugins JS -->
+    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/svg-inject.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/mouse-parallax.js"></script>
+    <script src="assets/js/plugins/slinky.min.js"></script>
+    <script src="assets/js/plugins/swiper.min.js"></script>
+    <script src="assets/js/plugins/ajax-mail.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
