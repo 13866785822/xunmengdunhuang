@@ -141,102 +141,55 @@
         <div id="main" style="width: 100%; height: 700px; margin: 100px auto;"></div>
         <div id="ss" ></div>
         <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
-        <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main'));
-			var option = {
-			    tooltip: {
-			        show: false
-			    },
-			    series: [{
-			        type: 'graph',
-			        layout: 'force',
-			        force: {
-			            repulsion: 250,
-			            edgeLength: 90
-			        },
-			        label: {
-			            show: true
-			        },
-			        itemStyle: {
-			            borderColor: 'rgba(255,215,0,0.4)',
-			            borderWidth: 1
-			        },
-			        // 节点数据：必须用 data 字段，每个节点必须有唯一 name
-			        data: [
-			            { name: '敦煌壁画' },
-			            { name: '艺术特点' },
-			            { name: '绘画风格' },
-			            { name: '分类' }
-			        ],
-			        // 连线数据：source/target 必须和节点 name 完全对应
-			        links: [
-			            { source: '敦煌壁画', target: '艺术特点' },
-			            { source: '敦煌壁画', target: '分类' },
-			            { source: '艺术特点', target: '绘画风格' }
-			        ]
-			    }]
-			};
-			myChart.setOption(option);
-                myChart.setOption(option);
-                var ecConfig = require('echarts/config');
-                function openOrFold(param) {
-                    var option = myChart.getOption();
-                    var nodesOption = option.series[0].nodes;
-                    var linksOption = option.series[0].links;
-                    var data = param.data;
-                    var linksNodes = [];
-
-                    var categoryLength = option.series[0].categories.length;
-
-                    if (data.category == (categoryLength - 1)) {
-                        alert(data.label);
-                    }
-
-                    if (data != null && data != undefined) {
-                        if (data.flag) {
-
-                            for ( var m in linksOption) {
-
-                                if (linksOption[m].target == data.id) {
-                                    linksNodes.push(linksOption[m].source);
-                                }
-                            }
-                            if (linksNodes != null && linksNodes != undefined) {
-                                for ( var p in linksNodes) {
-                                    nodesOption[linksNodes[p]].ignore = false;
-                                    nodesOption[linksNodes[p]].flag = true;
-                                }
-                            }
-                            nodesOption[data.id].flag = false;
-                            myChart.setOption(option);
-                        } else {
-
-                            for ( var m in linksOption) {
-
-                                if (linksOption[m].target == data.id) {
-                                    linksNodes.push(linksOption[m].source);
-                                }
-                                if (linksNodes != null && linksNodes != undefined) {
-                                    for ( var n in linksNodes) {
-                                        if (linksOption[m].target == linksNodes[n]) {
-                                            linksNodes.push(linksOption[m].source);
-                                        }
-                                    }
-                                }
-                            }
-                            if (linksNodes != null && linksNodes != undefined) {
-                                for ( var p in linksNodes) {
-                                    nodesOption[linksNodes[p]].ignore = true;
-                                    nodesOption[linksNodes[p]].flag = true;
-                                }
-                            }
-                            nodesOption[data.id].flag = true;
-                            myChart.setOption(option);
-                        }
-                    }
-                }
-                myChart.on(ecConfig.EVENT.CLICK, openOrFold);
-        </script>
+		<script type="text/javascript">
+		    // 初始化图表
+		    var myChart = echarts.init(document.getElementById('main'));
+		
+		    // 最简可运行的图谱配置
+		    var option = {
+		        tooltip: {
+		            show: false
+		        },
+		        series: [
+		            {
+		                type: 'graph',
+		                layout: 'force',
+		                force: {
+		                    repulsion: 300,
+		                    edgeLength: 100
+		                },
+		                label: {
+		                    show: true,
+		                    fontSize: 14
+		                },
+		                itemStyle: {
+		                    borderColor: 'rgba(255,215,0,0.4)',
+		                    borderWidth: 1
+		                },
+		                // 节点数据：字段名必须是 data，每个节点必须有唯一 name
+		                data: [
+		                    { name: '敦煌壁画', itemStyle: { color: '#8B4513' } },
+		                    { name: '艺术特点', itemStyle: { color: '#EE7942' } },
+		                    { name: '绘画风格', itemStyle: { color: '#9BCD9B' } },
+		                    { name: '分类', itemStyle: { color: '#EE9A49' } },
+		                    { name: '色彩', itemStyle: { color: '#EE7942' } },
+		                    { name: '故事画', itemStyle: { color: '#4682B4' } }
+		                ],
+		                // 连线数据：source 和 target 必须和节点 name 完全一致
+		                links: [
+		                    { source: '敦煌壁画', target: '艺术特点' },
+		                    { source: '敦煌壁画', target: '分类' },
+		                    { source: '敦煌壁画', target: '色彩' },
+		                    { source: '艺术特点', target: '绘画风格' },
+		                    { source: '分类', target: '故事画' }
+		                ]
+		            }
+		        ]
+		    };
+		
+		    // 渲染图表
+		    myChart.setOption(option);
+		</script>
     </div>
     <!-- Global Vendor, plugins JS -->
     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
