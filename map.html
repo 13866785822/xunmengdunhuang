@@ -142,21 +142,19 @@
         <div id="ss" ></div>
         <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
         <script type="text/javascript">
-            require.config({
-                paths : {
-                    echarts : 'http://echarts.baidu.com/build/dist'
-                }
-            });
-            require([ "echarts", "echarts/chart/force"], function(ec) {
-                var myChart = ec.init(document.getElementById('main'), 'bar');
-                var option = {
+            var myChart = echarts.init(document.getElementById('main'), 'bar');
+			var option = {
                     tooltip : {
                         show : false
                     },
                     series : [ {
-                        type : 'force',
-                        name : "Force tree",
-                        focusNodeAdjacency: true,
+                        type: 'graph',
+					    layout: 'force',
+					    name: "Force tree",
+					    focusNodeAdjacency: true,
+					    force: {
+					        repulsion: 250,  // 节点斥力，数值越大节点越分散
+					        edgeLength: 90   // 连线长度，可按需调整
                         itemStyle : {
                             normal : {
                                 label : {show : true},
