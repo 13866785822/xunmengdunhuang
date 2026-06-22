@@ -26,6 +26,10 @@
         }
     </style>
 </head>
+
+
+
+
 <body class="body-dark-mode-wrap">
     <div class="main-wrapper">
         <header class="header-area header-area-padding-2 section-padding-lr-1 transparent-bar sticky-bar bg-white sticky-white-bg">
@@ -136,203 +140,150 @@
         </div>
         <div id="main" style="width: 100%; height: 700px; margin: 100px auto;"></div>
         <div id="ss" ></div>
-        <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-        <script type="text/javascript">
-            require.config({
-                paths : {
-                    echarts : 'http://echarts.baidu.com/build/dist'
-                }
-            });
-            require([ "echarts", "echarts/chart/force"], function(ec) {
-                // 修复点1：移除错误的主题参数（'bar'不是合法主题）
-                var myChart = ec.init(document.getElementById('main'));
-                
-                var option = {
-                    tooltip : {
-                        show : true, // 开启tooltip方便调试
-                        formatter: function(params) {
-                            return params.data.label;
-                        }
-                    },
-                    // 补充力导向图布局配置，提升交互稳定性
-                    series : [ {
-                        type : 'force',
-                        name : "Force tree",
-                        focusNodeAdjacency: true,
-                        layout: 'force', // 明确布局类型
-                        roam: true, // 允许拖拽/缩放
-                        gravity: 0.1, // 重力参数，控制节点聚拢程度
-                        scaling: 1.1, // 缩放比例
-                        force: {
-                            repulsion: 200 // 节点斥力，避免重叠
-                        },
-                        itemStyle : {
-                            normal : {
-                                label : {
-                                    show : true,
-                                    fontSize: 12,
-                                    color: '#fff'
-                                },
-                                nodeStyle : {
-                                    brushType : 'both',
-                                    borderColor : 'rgba(255,215,0,0.4)',
-                                    borderWidth : 1
-                                }
-                            }
-                        },
-                        categories: [{
-                            name: '1',
-                            itemStyle: {
-                                normal: {
-                                    color: "#5E2315",
-                                }
-                            }
-                        }, {
-                            name: '2',
-                            itemStyle: {
-                                normal: {
-                                    color: "#DC7743",
-                                }
-                            }
-                        }, {
-                            name: '3',
-                            itemStyle: {
-                                normal: {
-                                    color: "#1E6CAC",
-                                }
-                            }
-                        }, {
-                            name: '4',
-                            itemStyle: {
-                                normal: {
-                                    color: "#A5CFB9",
-                                }
-                            }
-                        }, {
-                            name: '5',
-                            itemStyle: {
-                                normal: {
-                                    color: "#E8C797",
-                                }
-                            }
-                        }],
-                        // 修复点2：修正重复的节点ID（31/32重复问题）
-                        nodes : [
-                            {id:0,category:0,name:'0',label:'敦煌壁画',symbolSize:40,ignore:false,flag:true},
-                            {id:1,category:1,name:'1',label:'分类',symbolSize:35,ignore:true,flag:true},
-                            {id:2,category:2,name:'2',label:'人像画',symbolSize:30,ignore:true,flag:true},
-                            {id:3,category:2,name:'3',label:'经变画',symbolSize:30,ignore:true,flag:true},
-                            {id:4,category:2,name:'4',label:'佛像画',symbolSize:30,ignore:true,flag:true},
-                            {id:5,category:2,name:'5',label:'山水画',symbolSize:30,ignore:true,flag:true},
-                            {id:6,category:2,name:'6',label:'装饰画',symbolSize:30,ignore:true,flag:true},
-                            {id:7,category:2,name:'7',label:'故事画',symbolSize:30,ignore:true,flag:true},
-                            {id:8,category:3,name:'8',label:'佛传\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:9,category:3,name:'9',label:'本生\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:10,category:3,name:'10',label:'因缘\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:11,category:3,name:'11',label:'佛教历史\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:12,category:3,name:'12',label:'比喻\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:13,category:3,name:'13',label:'唐玄奘\n取经\n故事画',symbolSize:28,ignore:true,flag:true},
-                            {id:14,category:1,name:'14',label:'艺术特点',symbolSize:35,ignore:true,flag:true},
-                            {id:15,category:2,name:'15',label:'人物',symbolSize:30,ignore:true,flag:true},
-                            {id:16,category:2,name:'16',label:'故事情节',symbolSize:30,ignore:true,flag:true},
-                            {id:17,category:2,name:'17',label:'篇幅',symbolSize:30,ignore:true,flag:true},
-                            {id:18,category:2,name:'18',label:'绘画风格',symbolSize:30,ignore:true,flag:true},
-                            {id:19,category:3,name:'19',label:'早期风格',symbolSize:28,ignore:true,flag:true},
-                            {id:20,category:3,name:'20',label:'西魏风格',symbolSize:28,ignore:true,flag:true},
-                            {id:21,category:3,name:'21',label:'北周风格',symbolSize:28,ignore:true,flag:true},
-                            {id:22,category:3,name:'22',label:'唐代风格',symbolSize:28,ignore:true,flag:true},
-                            {id:23,category:3,name:'23',label:'宋代风格',symbolSize:28,ignore:true,flag:true},
-                            {id:24,category:1,name:'24',label:'色彩',symbolSize:35,ignore:true,flag:true},
-                            {id:25,category:2,name:'25',label:'赭色',symbolSize:25,ignore:true,flag:true},
-                            {id:26,category:2,name:'26',label:'硅孔雀石',symbolSize:25,ignore:true,flag:true},
-                            {id:27,category:2,name:'27',label:'密陀僧',symbolSize:25,ignore:true,flag:true},
-                            {id:28,category:2,name:'28',label:'炭黑',symbolSize:25,ignore:true,flag:true},
-                            {id:29,category:2,name:'29',label:'朱砂',symbolSize:25,ignore:true,flag:true},
-                            {id:30,category:2,name:'30',label:'青金石',symbolSize:25,ignore:true,flag:true},
-                            {id:31,category:2,name:'31',label:'石青',symbolSize:25,ignore:true,flag:true},
-                            {id:32,category:2,name:'32',label:'雌黄',symbolSize:25,ignore:true,flag:true},
-                            {id:33,category:2,name:'33',label:'铜绿',symbolSize:25,ignore:true,flag:true}, // 修复重复ID
-                            {id:34,category:2,name:'34',label:'铅丹',symbolSize:25,ignore:true,flag:true}  // 修复重复ID
-                        ],
-                        links : [
-                            {source : 1,target : 0}, {source : 14,target : 0}, {source : 24,target : 0},
-                            {source : 2,target : 1}, {source : 3,target : 1}, {source : 4,target : 1}, {source : 5,target : 1}, {source : 6,target : 1}, {source : 7,target : 1},
-                            {source : 8,target : 7}, {source : 9,target : 7}, {source : 10,target : 7}, {source : 11,target : 7}, {source : 12,target : 7}, {source : 13,target : 7},
-                            {source : 15,target : 14}, {source : 16,target : 14}, {source : 17,target : 14}, {source : 18,target : 14},
-                            {source : 19,target : 18}, {source : 20,target : 18}, {source : 21,target : 18}, {source : 22,target : 18}, {source : 23,target : 18},
-                            {source : 25,target : 24}, {source : 26,target : 24}, {source : 27,target : 24}, {source : 28,target : 24}, {source : 29,target : 24}, 
-                            {source : 30,target : 24}, {source : 31,target : 24}, {source : 32,target : 24}, {source : 33,target : 24}, {source : 34,target : 24}
-                        ]
-                    } ]
-                };
-                myChart.setOption(option);
-
-                // 修复点3：优化展开/折叠逻辑，确保关联节点正确显示/隐藏
-                function openOrFold(param) {
-                    var option = myChart.getOption();
-                    var nodes = option.series[0].nodes;
-                    var links = option.series[0].links;
-                    var targetNode = param.data;
-                    
-                    // 忽略最底层节点（无子节点的节点）
-                    if (!targetNode || targetNode.category === 3) {
-                        alert(targetNode.label);
-                        return;
-                    }
-
-                    // 收集当前节点的所有子节点ID
-                    function getChildNodes(parentId) {
-                        var childIds = [];
-                        links.forEach(link => {
-                            if (link.target === parentId) {
-                                childIds.push(link.source);
-                                // 递归收集子节点的子节点（深层折叠）
-                                childIds.push(...getChildNodes(link.source));
-                            }
-                        });
-                        return childIds;
-                    }
-
-                    var childIds = getChildNodes(targetNode.id);
-
-                    // 展开：flag=true → 显示子节点
-                    if (targetNode.flag) {
-                        childIds.forEach(id => {
-                            nodes.forEach(node => {
-                                if (node.id === id) {
-                                    node.ignore = false; // 显示节点
-                                    node.flag = true;    // 标记为可折叠
-                                }
-                            });
-                        });
-                        targetNode.flag = false; // 标记为已展开（可折叠）
-                    } 
-                    // 折叠：flag=false → 隐藏子节点
-                    else {
-                        childIds.forEach(id => {
-                            nodes.forEach(node => {
-                                if (node.id === id) {
-                                    node.ignore = true;  // 隐藏节点
-                                    node.flag = true;    // 重置为可展开
-                                }
-                            });
-                        });
-                        targetNode.flag = true; // 标记为可展开
-                    }
-
-                    // 重新渲染图表
-                    myChart.setOption(option);
-                }
-
-                // 绑定点击事件（兼容ECharts老版本事件名）
-                myChart.on('click', openOrFold);
-
-                // 窗口resize时重绘图表
-                window.addEventListener('resize', function() {
-                    myChart.resize();
-                });
-            });
-        </script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+		<script type="text/javascript">
+		    var myChart = echarts.init(document.getElementById('main'));
+		
+		    // 完整节点数据：按原图分层配色、分尺寸
+		    var graphNodes = [
+		        // 一级中心节点
+		        { 
+		            name: '敦煌壁画', 
+		            itemStyle: { color: '#7B3F00' }, 
+		            symbolSize: 55,
+		            label: { color: '#fff', fontSize: 16, fontWeight: 'bold' }
+		        },
+		
+		        // 二级橙色主分类节点
+		        { name: '艺术特点', itemStyle: { color: '#EE7942' }, symbolSize: 45, label: { color: '#fff' } },
+		        { name: '分类', itemStyle: { color: '#EE7942' }, symbolSize: 45, label: { color: '#fff' } },
+		        { name: '色彩', itemStyle: { color: '#EE7942' }, symbolSize: 45, label: { color: '#fff' } },
+		
+		        // 三级蓝色节点 - 艺术特点分支
+		        { name: '绘画风格', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '故事情节', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '人物', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '篇幅', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		
+		        // 三级蓝色节点 - 分类分支
+		        { name: '山水画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '装饰画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '经变画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '佛像画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '人像画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		        { name: '故事画', itemStyle: { color: '#4682B4' }, symbolSize: 38, label: { color: '#fff' } },
+		
+		        // 三级深蓝色节点 - 色彩分支
+		        { name: '朱砂', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '石青', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '密陀僧', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '雌黄', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '石绿', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '青金石', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '赭色', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '炭黑', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '铅丹', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		        { name: '硅孔雀石', itemStyle: { color: '#36648B' }, symbolSize: 35, label: { color: '#fff' } },
+		
+		        // 四级浅绿色节点 - 绘画风格分支
+		        { name: '西魏风格', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '早期风格', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '唐代风格', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '宋代风格', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '北周风格', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		
+		        // 四级浅绿色节点 - 故事画分支
+		        { name: '佛教历史故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '因缘故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '比喻故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '唐玄奘取经故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '本生故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } },
+		        { name: '佛传故事画', itemStyle: { color: '#9BCD9B' }, symbolSize: 38, label: { color: '#333' } }
+		    ];
+		
+		    // 完整连线关系：按名称关联，和原图结构完全一致
+		    var graphLinks = [
+		        // 中心节点连接二级分类
+		        { source: '敦煌壁画', target: '艺术特点' },
+		        { source: '敦煌壁画', target: '分类' },
+		        { source: '敦煌壁画', target: '色彩' },
+		
+		        // 艺术特点子节点
+		        { source: '艺术特点', target: '绘画风格' },
+		        { source: '艺术特点', target: '故事情节' },
+		        { source: '艺术特点', target: '人物' },
+		        { source: '艺术特点', target: '篇幅' },
+		
+		        // 分类子节点
+		        { source: '分类', target: '山水画' },
+		        { source: '分类', target: '装饰画' },
+		        { source: '分类', target: '经变画' },
+		        { source: '分类', target: '佛像画' },
+		        { source: '分类', target: '人像画' },
+		        { source: '分类', target: '故事画' },
+		
+		        // 色彩子节点
+		        { source: '色彩', target: '朱砂' },
+		        { source: '色彩', target: '石青' },
+		        { source: '色彩', target: '密陀僧' },
+		        { source: '色彩', target: '雌黄' },
+		        { source: '色彩', target: '石绿' },
+		        { source: '色彩', target: '青金石' },
+		        { source: '色彩', target: '赭色' },
+		        { source: '色彩', target: '炭黑' },
+		        { source: '色彩', target: '铅丹' },
+		        { source: '色彩', target: '硅孔雀石' },
+		
+		        // 绘画风格子节点
+		        { source: '绘画风格', target: '西魏风格' },
+		        { source: '绘画风格', target: '早期风格' },
+		        { source: '绘画风格', target: '唐代风格' },
+		        { source: '绘画风格', target: '宋代风格' },
+		        { source: '绘画风格', target: '北周风格' },
+		
+		        // 故事画子节点
+		        { source: '故事画', target: '佛教历史故事画' },
+		        { source: '故事画', target: '因缘故事画' },
+		        { source: '故事画', target: '比喻故事画' },
+		        { source: '故事画', target: '唐玄奘取经故事画' },
+		        { source: '故事画', target: '本生故事画' },
+		        { source: '故事画', target: '佛传故事画' }
+		    ];
+		
+		    var option = {
+		        tooltip: { show: false },
+		        series: [{
+		            type: 'graph',
+		            layout: 'force',
+		            roam: true, // 支持鼠标滚轮缩放、拖拽平移
+		            focusNodeAdjacency: true,
+		            force: {
+		                repulsion: 800,    // 节点斥力，数值越大节点越分散
+		                edgeLength: 120,   // 连线基础长度
+		                gravity: 0.1,      // 中心引力，避免节点过度散开
+		                friction: 0.6
+		            },
+		            label: {
+		                show: true,
+		                formatter: '{b}',
+		                fontSize: 14
+		            },
+		            lineStyle: {
+		                color: '#999',
+		                width: 1
+		            },
+		            data: graphNodes,
+		            links: graphLinks
+		        }]
+		    };
+		
+		    myChart.setOption(option);
+		
+		    // 窗口大小变化时自动适配
+		    window.addEventListener('resize', function () {
+		        myChart.resize();
+		    });
+		</script>
     </div>
     <!-- Global Vendor, plugins JS -->
     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
@@ -352,4 +303,5 @@
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
